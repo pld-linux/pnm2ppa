@@ -42,7 +42,7 @@ Wiêcej informacji znajduje siê na stronie projektu.
 %patch1 -p1
 
 %build
-%{__make} 
+%{__make}
 cd pbm2ppa-0.8.6
 %{__make}
 
@@ -75,9 +75,9 @@ gzip -9nf docs/en/{CREDITS,INSTALL,LICENSE,README,RELEASE-NOTES,TODO,COLOR.txt,C
 	test.ps
 
 %clean
-rm -rf $RPM_BUILD_ROOT 
+rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 %defattr(644,root,root,755)
 %doc docs/en/*.gz docs/en/*.html test.ps.gz pbm2ppa
 %attr(755,root,root) %{_bindir}/pnm2ppa
