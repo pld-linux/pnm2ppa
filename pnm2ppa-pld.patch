@@ -5,7 +5,7 @@ diff -Nur pnm2ppa-1.10pre1.orig/pnm2ppa.conf pnm2ppa-1.10pre1/pnm2ppa.conf
  # will be used.   The printer version can also be set with the command line
  # option e.g., "-v 720".
  
--version   ERROR    # PNM2PPA WILL *NOT* WORK UNTIL THIS ENTRY IS REMOVED!!!!
+-version 0       # REMOVE THIS ENTRY to make 720 the default printer model!!!
  #version  720	# 710, 712, 722 also acceptable
  #version  820
  #version 1000
