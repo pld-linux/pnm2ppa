@@ -48,9 +48,13 @@ Wiêcej informacji znajduje siê na stronie projektu.
 %patch2 -p1
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -Wall -pedantic -DLANG=\$(LANG)"
 
-%{__make} -C pbm2ppa-0.8.6
+%{__make} -C pbm2ppa-0.8.6 \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -Wall"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -82,8 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/en/{CREDITS,INSTALL,LICENSE,README,RELEASE-NOTES,TODO,COLOR.txt,CALIBRATION.txt}
+%doc docs/en/{CREDITS,INSTALL,README,RELEASE-NOTES,TODO,COLOR.txt,CALIBRATION.txt}
 %doc test.ps pbm2ppa
+%lang(pl) %doc docs/pl/{AUTORZY,CZYTAJ.TO,INSTALACJA,KALIBRACJA}
 %attr(755,root,root) %{_bindir}/pnm2ppa
 %attr(755,root,root) %{_bindir}/pbm2ppa
 %attr(755,root,root) %{_bindir}/pbmtpg
