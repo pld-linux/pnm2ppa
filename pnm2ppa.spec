@@ -6,7 +6,7 @@ Version:	1.10
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
-Source0:	http://belnet.dl.sourceforge.net/pnm2ppa/%{name}-%{version}%{_pre}.tar.gz
+Source0:	http://belnet.dl.sourceforge.net/pnm2ppa/%{name}-%{version}.tar.gz
 Source1:	ppa-0.8.6.tar.gz
 Source2:	%{name}-filters.tar.gz
 Patch0:		pbm2ppa-20000205.diff
@@ -39,7 +39,7 @@ sterownika o nazwie pbm2ppa.
 Wiêcej informacji znajduje siê na stronie projektu.
 
 %prep
-%setup -q -n %{name}-%{version}%{_pre} -a1 -a2
+%setup -q -n %{name}-%{version} -a1 -a2
 %patch0 -p0
 %patch1 -p1
 %patch2 -p1
