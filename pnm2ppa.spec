@@ -1,15 +1,17 @@
+%define		_pre	pre1
 Summary:	Drivers for printing to HP PPA printers
 Summary(pl):	Sterowniki do drukarek HP PPA
 Name:		pnm2ppa
-Version:	1.04
-Release:	1
+Version:	1.10
+Release:	0.%{_pre}
 License:	GPL
 Group:		Applications/Publishing
-Source0:	http://download.sourceforge.net/pnm2ppa/%{name}-%{version}.tar.gz
+Source0:	http://belnet.dl.sourceforge.net/pnm2ppa/%{name}-%{version}%{_pre}.tar.gz
 Source1:	ppa-0.8.6.tar.gz
 Source2:	%{name}-filters.tar.gz
 Patch0:		pbm2ppa-20000205.diff
 Patch1:		%{name}-pld.patch
+Patch2:		%{name}-destdir.patch
 URL:		http://pnm2ppa.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	mpage ghostscript
@@ -37,9 +39,10 @@ sterownika o nazwie pbm2ppa.
 Wiêcej informacji znajduje siê na stronie projektu.
 
 %prep
-%setup -q -a1 -a2
+%setup -q -n %{name}-%{version}%{_pre} -a1 -a2
 %patch0 -p0
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__make}
@@ -50,7 +53,7 @@ cd pbm2ppa-0.8.6
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir},%{_mandir}/man1,%{_libdir}/lpfilters}
 
-%{__make} INSTALLDIR=$RPM_BUILD_ROOT%{_bindir} \
+%{__make} BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	CONFDIR=$RPM_BUILD_ROOT%{_sysconfdir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 install
 
@@ -87,6 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/test_ppa
 %attr(755,root,root) %{_bindir}/detect_ppa
 %{_mandir}/man1/*.1*
-%{_libdir}/lpfilters/pnm2ppa-filter-*
+%attr(755,root,root) %{_libdir}/lpfilters/pnm2ppa-filter-*
 %config %{_sysconfdir}/pnm2ppa.conf
 %config %{_sysconfdir}/pbm2ppa.conf
