@@ -53,9 +53,10 @@ cd pbm2ppa-0.8.6
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir},%{_mandir}/man1,%{_libdir}/lpfilters}
 
-%{__make} BINDIR=$RPM_BUILD_ROOT%{_bindir} \
+%{__make} install \
+	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	CONFDIR=$RPM_BUILD_ROOT%{_sysconfdir} \
-	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 install
+	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
 install utils/Linux/detect_ppa $RPM_BUILD_ROOT%{_bindir}
 install utils/Linux/test_ppa $RPM_BUILD_ROOT%{_bindir}
@@ -69,20 +70,17 @@ install pnm2ppa-filters/pnm2ppa-filter-color $RPM_BUILD_ROOT%{_libdir}/lpfilters
 install pnm2ppa-filters/pnm2ppa-filter-color-eco $RPM_BUILD_ROOT%{_libdir}/lpfilters
 
 install -d pbm2ppa
-for file in CALIBRATION CREDITS INSTALL INSTALL-MORE LICENSE README ; do
-  install -m 0644 pbm2ppa-0.8.6/$file pbm2ppa/$file
-  gzip -9nf pbm2ppa/$file
+for file in CALIBRATION CREDITS README ; do
+	install -m 0644 pbm2ppa-0.8.6/$file pbm2ppa/$file
 done
-
-gzip -9nf docs/en/{CREDITS,INSTALL,LICENSE,README,RELEASE-NOTES,TODO,COLOR.txt,CALIBRATION.txt} \
-	test.ps
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/en/*.gz docs/en/*.html test.ps.gz pbm2ppa
+%doc docs/en/{CREDITS,INSTALL,LICENSE,README,RELEASE-NOTES,TODO,COLOR.txt,CALIBRATION.txt}
+%doc test.ps pbm2ppa
 %attr(755,root,root) %{_bindir}/pnm2ppa
 %attr(755,root,root) %{_bindir}/pbm2ppa
 %attr(755,root,root) %{_bindir}/pbmtpg
