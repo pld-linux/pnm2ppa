@@ -1,9 +1,9 @@
-%define		_pre	pre3
+#%define		_pre	pre3
 Summary:	Drivers for printing to HP PPA printers
 Summary(pl):	Sterowniki do drukarek HP PPA
 Name:		pnm2ppa
 Version:	1.10
-Release:	0.%{_pre}
+Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://belnet.dl.sourceforge.net/pnm2ppa/%{name}-%{version}%{_pre}.tar.gz
