@@ -15,10 +15,11 @@ Patch0:		pbm2ppa-20000205.diff
 Patch1:		%{name}-pld.patch
 Patch2:		%{name}-destdir.patch
 URL:		http://pnm2ppa.sourceforge.net/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Requires:	mpage ghostscript
+Requires:	ghostscript
+Requires:	mpage
 Obsoletes:	ppa
 Obsoletes:	pbm2ppa
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 pnm2ppa is a color driver for HP PPA host-based printers such as the
@@ -48,8 +49,8 @@ Wiêcej informacji znajduje siê na stronie projektu.
 
 %build
 %{__make}
-cd pbm2ppa-0.8.6
-%{__make}
+
+%{__make} -C pbm2ppa-0.8.6
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -91,5 +92,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/detect_ppa
 %{_mandir}/man1/*.1*
 %attr(755,root,root) %{_libdir}/lpfilters/pnm2ppa-filter-*
-%config %{_sysconfdir}/pnm2ppa.conf
-%config %{_sysconfdir}/pbm2ppa.conf
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/pnm2ppa.conf
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/pbm2ppa.conf
