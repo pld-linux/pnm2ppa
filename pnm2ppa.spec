@@ -5,10 +5,6 @@ Version:	1.04
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
-Group(de):	Applikationen/Publizieren
-Group(es):	Aplicaciones/Editoración
-Group(pl):	Aplikacje/Publikowanie
-Group(pt_BR):	Aplicações/Editoração
 Source0:	http://download.sourceforge.net/pnm2ppa/%{name}-%{version}.tar.gz
 Source1:	http://www.httptech.com/ppa/files/ppa-0.8.6.tar.gz
 Source2:	%{name}-filters.tar.gz
