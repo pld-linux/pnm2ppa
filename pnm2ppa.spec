@@ -7,8 +7,11 @@ Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://belnet.dl.sourceforge.net/pnm2ppa/%{name}-%{version}.tar.gz
+# Source0-md5:	effd8c42bbe7c970e70fa7d9d991275b
 Source1:	ppa-0.8.6.tar.gz
+# Source1-md5:	fb40576435d5979db64fbea305ec224b
 Source2:	%{name}-filters.tar.gz
+# Source2-md5:	c73c6d86ef7e143f8464ba40c4dfa9bb
 Patch0:		pbm2ppa-20000205.diff
 Patch1:		%{name}-pld.patch
 Patch2:		%{name}-destdir.patch
