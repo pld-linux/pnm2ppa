@@ -2,7 +2,7 @@ Summary:	Drivers for printing to HP PPA printers
 Summary(pl):	Sterowniki do drukarek HP PPA
 Name:		pnm2ppa
 Version:	1.12
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -50,7 +50,7 @@ Wiêcej informacji znajduje siê na stronie projektu.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -Wall -pedantic -DLANG=\$(LANG)"
+	CFLAGS="%{rpmcflags} -Wall -pedantic -DLANG_\$(LANG)"
 
 %{__make} -C pbm2ppa-0.8.6 \
 	CC="%{__cc}" \
