@@ -1,4 +1,4 @@
-%define		_pre	pre2
+%define		_pre	pre3
 Summary:	Drivers for printing to HP PPA printers
 Summary(pl):	Sterowniki do drukarek HP PPA
 Name:		pnm2ppa
