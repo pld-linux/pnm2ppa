@@ -5,7 +5,7 @@ Version:	1.12
 Release:	2
 License:	GPL
 Group:		Applications/Publishing
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/pnm2ppa/%{name}-%{version}.tar.gz
 # Source0-md5:	effd8c42bbe7c970e70fa7d9d991275b
 Source1:	ppa-0.8.6.tar.gz
 # Source1-md5:	fb40576435d5979db64fbea305ec224b
