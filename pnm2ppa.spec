@@ -83,20 +83,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(644,root,root,755)
-%doc docs/en/CREDITS.gz docs/en/INSTALL.gz docs/en/LICENSE.gz docs/en/README.gz
-%doc docs/en/RELEASE-NOTES.gz docs/en/TODO.gz
-%doc docs/en/COLOR.txt.gz docs/en/CALIBRATION.txt.gz
-%doc docs/en/COLOR.html docs/en/CALIBRATION.html
-%doc test.ps.gz
-%doc pbm2ppa
+%doc docs/en/*.gz docs/en/*.html test.ps.gz pbm2ppa
 %attr(755,root,root) %{_bindir}/pnm2ppa
 %attr(755,root,root) %{_bindir}/pbm2ppa
 %attr(755,root,root) %{_bindir}/pbmtpg
 %attr(755,root,root) %{_bindir}/calibrate_ppa
 %attr(755,root,root) %{_bindir}/test_ppa
 %attr(755,root,root) %{_bindir}/detect_ppa
-%{_mandir}/man1/pnm2ppa.1*
-%{_mandir}/man1/pbm2ppa.1*
+%{_mandir}/man1/*.1*
 %{_libdir}/lpfilters/pnm2ppa-filter-*
 %config %{_sysconfdir}/pnm2ppa.conf
 %config %{_sysconfdir}/pbm2ppa.conf
