@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://download.sourceforge.net/pnm2ppa/%{name}-%{version}.tar.gz
-Source1:	http://www.httptech.com/ppa/files/ppa-0.8.6.tar.gz
+Source1:	ppa-0.8.6.tar.gz
 Source2:	%{name}-filters.tar.gz
 Patch0:		pbm2ppa-20000205.diff
 Patch1:		%{name}-pld.patch
