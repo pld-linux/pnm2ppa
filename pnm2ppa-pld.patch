@@ -1,0 +1,24 @@
+diff -uNr pnm2ppa-1.04/pnm2ppa.conf pnm2ppa-1.04.pld/pnm2ppa.conf
+--- pnm2ppa-1.04/pnm2ppa.conf	Sat Oct 28 11:02:57 2000
++++ pnm2ppa-1.04.pld/pnm2ppa.conf	Sat Nov 11 13:26:57 2000
+@@ -12,7 +12,7 @@
+ # will be used.   The printer version can also be set with the command line
+ # option e.g., "-v 720".
+ 
+-version   ERROR    # PNM2PPA WIIL *NOT* WORK UNTIUL THIS ENTRY IS REMOVED!!!!
++
+ #version  720	# 710, 712, 722 also acceptable
+ #version  820
+ #version 1000
+@@ -29,8 +29,9 @@
+ # configuration  file (/etc/pnm2ppa.conf), and not from configuration files 
+ # specified  with the pnm2ppa option "-f".
+ 
+-#silent 1
+-#verbose 1
++silent 1   #SYSTEM LOG MESSAGES SILENCED
++#verbose 1      
++
+ 
+ #---------set the margins of the printed page-------------------
+ # Margins: these are distances from the edges of the paper in
