@@ -30,7 +30,7 @@ in PPA format. The older (black only) driver pbm2ppa is also included.
 Install pnm2ppa if you have a PPA printer and need to print.
 
 For further information, see the pnm2ppa project homepage at
-http://pnm2ppa.sourceforge.net/ .
+<http://pnm2ppa.sourceforge.net/>.
 
 %description -l pl
 pnm2ppa to obs³uguj±cy kolor sterownik do drukarek HP PPA, takich jak
