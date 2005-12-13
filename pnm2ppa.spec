@@ -97,5 +97,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/detect_ppa
 %{_mandir}/man1/*.1*
 %attr(755,root,root) %{_libdir}/lpfilters/pnm2ppa-filter-*
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/pnm2ppa.conf
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/pbm2ppa.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pnm2ppa.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pbm2ppa.conf
