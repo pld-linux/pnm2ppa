@@ -1,5 +1,5 @@
 Summary:	Drivers for printing to HP PPA printers
-Summary(pl):	Sterowniki do drukarek HP PPA
+Summary(pl.UTF-8):   Sterowniki do drukarek HP PPA
 Name:		pnm2ppa
 Version:	1.12
 Release:	2
@@ -32,14 +32,14 @@ Install pnm2ppa if you have a PPA printer and need to print.
 For further information, see the pnm2ppa project homepage at
 <http://pnm2ppa.sourceforge.net/>.
 
-%description -l pl
-pnm2ppa to obs³uguj±cy kolor sterownik do drukarek HP PPA, takich jak
+%description -l pl.UTF-8
+pnm2ppa to obsÅ‚ugujÄ…cy kolor sterownik do drukarek HP PPA, takich jak
 HP710C, 712C, 720C, 722C, 820Cse, 820Cxi, 1000Cse, 1000Cxi. Przyjmuje
-wyj¶cie ghostscripta w formacie PNM, wysy³a je na drukarkê w formacie
-PPA. Za³±czona jest te¿ starsza (obs³uguj±ca tylko czerñ) wersja
+wyjÅ›cie ghostscripta w formacie PNM, wysyÅ‚a je na drukarkÄ™ w formacie
+PPA. ZaÅ‚Ä…czona jest teÅ¼ starsza (obsÅ‚ugujÄ…ca tylko czerÅ„) wersja
 sterownika o nazwie pbm2ppa.
 
-Wiêcej informacji znajduje siê na stronie projektu.
+WiÄ™cej informacji znajduje siÄ™ na stronie projektu.
 
 %prep
 %setup -q -a1 -a2
