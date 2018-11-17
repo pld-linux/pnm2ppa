@@ -35,6 +35,25 @@ wyjście ghostscripta w formacie PNM, wysyła je na drukarkę w formacie
 PPA. Załączona jest też starsza (obsługująca tylko czerń) wersja
 sterownika o nazwie pbm2ppa.
 
+%package filters
+Summary:	PPA filters for LPRng printing system
+Summary(pl.UTF-8):	Filtry PPA do systemu drukowania LPRng
+Group:		Applications/Publishing
+Requires:	%{name} = %{version}-%{release}
+Requires:	LPRng
+
+%description filters
+PPA filters for LPRng printing system.
+
+Supported printers include HP710C, 712C, 720C, 722C, 820Cse, 820Cxi,
+1000Cse, and 1000Cxi.
+
+%description filters -l pl.UTF-8
+Filtry PPA do systemu drukowania LPRng.
+
+Obsługiwane drukarki to m.in.: HP710C, 712C, 720C, 722C, 820Cse,
+820Cxi, 1000Cse oraz 1000Cxi.
+
 %prep
 %setup -q -a1 -a2
 %patch0 -p0
@@ -89,6 +108,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/test_ppa
 %{_mandir}/man1/pbm2ppa.1*
 %{_mandir}/man1/pnm2ppa.1*
-%attr(755,root,root) %{lpfiltersdir}/pnm2ppa-filter-*
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pbm2ppa.conf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pnm2ppa.conf
+
+%files filters
+%defattr(644,root,root,755)
+%attr(755,root,root) %{lpfiltersdir}/pnm2ppa-filter-*
