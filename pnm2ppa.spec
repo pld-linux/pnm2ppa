@@ -20,7 +20,7 @@ Obsoletes:	ppa
 Obsoletes:	pbm2ppa
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		lpfiltersdir	%{_libdir}/lpfilters
+%define		lpfiltersdir	%{_libexecdir}/lpfilters
 
 %description
 pnm2ppa is a color driver for HP PPA host-based printers such as the
