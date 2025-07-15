@@ -56,8 +56,8 @@ Obsługiwane drukarki to m.in.: HP710C, 712C, 720C, 722C, 820Cse,
 
 %prep
 %setup -q -a1 -a2
-%patch0 -p0
-%patch1 -p1
+%patch -P0 -p0
+%patch -P1 -p1
 
 %build
 %configure
